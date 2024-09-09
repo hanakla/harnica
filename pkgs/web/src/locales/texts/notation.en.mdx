@@ -1,0 +1,39 @@
+The score editor supports the following notations
+
+- Alphabets: `C`, `Dm`, `Fsus2`, `B7/C`, etc.
+- Degree codes: `I`, `II`, `V7`, `VI`, etc.
+
+The following quality notations are supported for both alphabetical and degree codes
+- 7th: `C7`, `I7`, etc.
+- Tension: `C7(9)`, `I7(9)(11)`, etc.
+- Omit: `C7omit3`, `I7omit3omit5`, etc.
+- Suspend: `Csus2`, `Isus4`, etc.
+- Slashes: `C/B`, `I/III`, etc.
+
+Up or down an octave can be expressed by adding a `+` or `-` at the beginning of the note
+- Examples: `+C`, `-I`, etc.
+- String: `_`, rest: `%`, etc.
+- Rests: `%`.
+- Measure separator: `|`
+
+### Abbreviations
+
+Harnica has an abbreviated notation based on the general chord notation.
+
+- **`C` → Cmaj (CM)**<br/>
+`C` is interpreted as an abbreviation for `Cmaj (CM)`.
+- **`C9 (C(9))` → `C7(9)` = `Cadd7add9`**<br/>
+`C9` or `C(9)` is interpreted as `C7(9)`. <br/>
+To simply add a 9th degree note, write `Cadd9`.
+The maximum tension, `C13`, adds the 7th, 9th, 11th, and 13th keys.
+
+
+## Notation for controls
+
+- Key changes: `Key=C`, `Key=Am`<br />
+Degree chords cannot be used to specify keys
+- Tempo change: `Tempo=120`.
+
+## Comment notation
+
+- Lines beginning with `#` are ignored as comments.

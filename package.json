@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "harnica-root",
+  "scripts": {
+    "dev": "wsrun dev",
+    "build": "wsrun --serial build",
+    "start": "wsrun -p harnica -c start"
+  },
+  "workspaces": [
+    "pkgs/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "prettier": "^3.2.5",
+    "wsrun": "^5.2.4"
+  },
+  "packageManager": "yarn@4.1.1"
+}

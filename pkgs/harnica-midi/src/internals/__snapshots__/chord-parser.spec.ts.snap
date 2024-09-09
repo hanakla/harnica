@@ -1,0 +1,1034 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`chord-parser > matchChordProgression > should work 1`] = `
+[
+  {
+    "data": {
+      "bar": 0,
+      "groupDepth": 0,
+      "isDegree": false,
+      "key": null,
+      "noteIdx": 0,
+      "notesInThisBar": 1,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 4,
+      "start": 1,
+      "string": "C#m7",
+    },
+    "note": {
+      "detail": {
+        "chordName": "C#m7",
+        "originalChordName": "C#m7",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+          [
+            "tension",
+            "7",
+          ],
+        ],
+        "root": "C#",
+        "warns": [],
+      },
+      "isDegree": false,
+      "keyValues": [
+        1,
+        4,
+        8,
+        11,
+      ],
+      "keys": [
+        "C#3",
+        "E3",
+        "G#3",
+        "B3",
+      ],
+      "match": {
+        "length": 4,
+        "start": 0,
+        "string": "C#m7",
+      },
+      "octave": 0,
+      "resolveKey": null,
+      "type": "note",
+    },
+  },
+  {
+    "data": {
+      "bar": 0,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": null,
+      "notesInThisBar": 1,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 7,
+      "string": "|",
+    },
+    "note": null,
+  },
+  {
+    "data": {
+      "bar": 1,
+      "groupDepth": 0,
+      "isDegree": false,
+      "key": null,
+      "noteIdx": 1,
+      "notesInThisBar": 1,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 3,
+      "start": 9,
+      "string": "Am7",
+    },
+    "note": {
+      "detail": {
+        "chordName": "Am7",
+        "originalChordName": "Am7",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+          [
+            "tension",
+            "7",
+          ],
+        ],
+        "root": "A",
+        "warns": [],
+      },
+      "isDegree": false,
+      "keyValues": [
+        9,
+        12,
+        16,
+        19,
+      ],
+      "keys": [
+        "A3",
+        "C4",
+        "E4",
+        "G4",
+      ],
+      "match": {
+        "length": 3,
+        "start": 0,
+        "string": "Am7",
+      },
+      "octave": 0,
+      "resolveKey": null,
+      "type": "note",
+    },
+  },
+  {
+    "data": {
+      "bar": 1,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": null,
+      "notesInThisBar": 1,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 13,
+      "string": "|",
+    },
+    "note": null,
+  },
+  {
+    "data": {
+      "bar": 2,
+      "groupDepth": 0,
+      "isDegree": false,
+      "key": null,
+      "noteIdx": 2,
+      "notesInThisBar": 4,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 15,
+      "string": "G",
+    },
+    "note": {
+      "detail": {
+        "chordName": "G",
+        "originalChordName": "G",
+        "qualities": [],
+        "root": "G",
+        "warns": [],
+      },
+      "isDegree": false,
+      "keyValues": [
+        7,
+        11,
+        14,
+      ],
+      "keys": [
+        "G3",
+        "B3",
+        "D4",
+      ],
+      "match": {
+        "length": 1,
+        "start": 0,
+        "string": "G",
+      },
+      "octave": 0,
+      "resolveKey": null,
+      "type": "note",
+    },
+  },
+  {
+    "data": {
+      "bar": 2,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": 3,
+      "notesInThisBar": 4,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 17,
+      "string": "_",
+    },
+    "note": {
+      "match": {
+        "length": 1,
+        "start": 0,
+        "string": "_",
+      },
+      "type": "repeat",
+    },
+  },
+  {
+    "data": {
+      "bar": 2,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": 4,
+      "notesInThisBar": 4,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 19,
+      "string": "_",
+    },
+    "note": {
+      "match": {
+        "length": 1,
+        "start": 0,
+        "string": "_",
+      },
+      "type": "repeat",
+    },
+  },
+  {
+    "data": {
+      "bar": 2,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": 5,
+      "notesInThisBar": 4,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 21,
+      "string": "#",
+    },
+    "note": {
+      "match": {
+        "length": 1,
+        "start": 0,
+        "string": "#",
+      },
+      "type": "rest",
+    },
+  },
+  {
+    "data": {
+      "bar": 2,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": null,
+      "notesInThisBar": 4,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 23,
+      "string": "|",
+    },
+    "note": null,
+  },
+  {
+    "data": {
+      "bar": 3,
+      "groupDepth": 0,
+      "isDegree": false,
+      "key": null,
+      "noteIdx": 6,
+      "notesInThisBar": 1,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 4,
+      "start": 25,
+      "string": "Em/B",
+    },
+    "note": {
+      "detail": {
+        "chordName": "Em/B",
+        "originalChordName": "Em/B",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+        ],
+        "root": "E",
+        "warns": [],
+      },
+      "isDegree": false,
+      "keyValues": [
+        -1,
+        4,
+        7,
+        11,
+      ],
+      "keys": [
+        "B2",
+        "E3",
+        "G3",
+        "B3",
+      ],
+      "match": {
+        "length": 4,
+        "start": 0,
+        "string": "Em/B",
+      },
+      "octave": 0,
+      "resolveKey": null,
+      "type": "note",
+    },
+  },
+  {
+    "data": {
+      "bar": 3,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": null,
+      "noteIdx": null,
+      "notesInThisBar": 1,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 1,
+      "start": 30,
+      "string": "|",
+    },
+    "note": null,
+  },
+  {
+    "data": {
+      "bar": 4,
+      "groupDepth": 0,
+      "isDegree": null,
+      "key": "C",
+      "noteIdx": null,
+      "notesInThisBar": 0,
+      "notesInThisGroup": null,
+      "sig": {},
+    },
+    "match": {
+      "length": 5,
+      "start": 32,
+      "string": "Key=C",
+    },
+    "note": {
+      "key": "C",
+      "match": {
+        "length": 5,
+        "start": 0,
+        "string": "Key=C",
+      },
+      "type": "keyChange",
+    },
+  },
+]
+`;
+
+exports[`chord-parser > parseChordProgression > should parse chord progression 1`] = `
+[
+  {
+    "chord": "A#m7",
+    "duration": {
+      "beatClock": [
+        0,
+        1,
+        1,
+      ],
+      "beatClockStr": "0:1:1",
+      "tick": "T171",
+    },
+    "key": "C",
+    "keyValues": [
+      10,
+      13,
+      17,
+      20,
+    ],
+    "keys": [
+      "A#3",
+      "C#4",
+      "F4",
+      "G#4",
+    ],
+    "match": {
+      "data": {
+        "bar": 0,
+        "groupDepth": 0,
+        "isDegree": false,
+        "key": null,
+        "noteIdx": 0,
+        "notesInThisBar": 3,
+        "notesInThisGroup": null,
+        "sig": {},
+      },
+      "match": {
+        "length": 4,
+        "start": 0,
+        "string": "A#m7",
+      },
+      "note": {
+        "detail": {
+          "chordName": "A#m7",
+          "originalChordName": "A#m7",
+          "qualities": [
+            [
+              "quality",
+              "m",
+            ],
+            [
+              "tension",
+              "7",
+            ],
+          ],
+          "root": "A#",
+          "warns": [],
+        },
+        "isDegree": false,
+        "keyValues": [
+          10,
+          13,
+          17,
+          20,
+        ],
+        "keys": [
+          "A#3",
+          "C#4",
+          "F4",
+          "G#4",
+        ],
+        "match": {
+          "length": 4,
+          "start": 0,
+          "string": "A#m7",
+        },
+        "octave": 0,
+        "resolveKey": null,
+        "type": "note",
+      },
+    },
+    "noteIdx": 0,
+    "sig": {},
+    "startAt": {
+      "beatClock": [
+        0,
+        0,
+        0,
+      ],
+      "beatClockStr": "0:0:0",
+    },
+  },
+  {
+    "chord": "A#m7",
+    "duration": {
+      "beatClock": [
+        0,
+        1,
+        1,
+      ],
+      "beatClockStr": "0:1:1",
+      "tick": "T171",
+    },
+    "key": "C",
+    "keyValues": [
+      10,
+      13,
+      17,
+      20,
+    ],
+    "keys": [
+      "A#3",
+      "C#4",
+      "F4",
+      "G#4",
+    ],
+    "match": {
+      "data": {
+        "bar": 0,
+        "groupDepth": 0,
+        "isDegree": null,
+        "key": null,
+        "noteIdx": 1,
+        "notesInThisBar": 3,
+        "notesInThisGroup": null,
+        "sig": {},
+      },
+      "match": {
+        "length": 1,
+        "start": 5,
+        "string": "_",
+      },
+      "note": {
+        "match": {
+          "length": 1,
+          "start": 0,
+          "string": "_",
+        },
+        "type": "repeat",
+      },
+    },
+    "noteIdx": 1,
+    "sig": {},
+    "startAt": {
+      "beatClock": [
+        0,
+        1,
+        1,
+      ],
+      "beatClockStr": "0:1:1",
+    },
+  },
+  {
+    "chord": null,
+    "duration": {
+      "beatClock": [
+        0,
+        1,
+        1,
+      ],
+      "beatClockStr": "0:1:1",
+      "tick": "T171",
+    },
+    "key": "C",
+    "keyValues": [],
+    "keys": [],
+    "match": {
+      "data": {
+        "bar": 0,
+        "groupDepth": 0,
+        "isDegree": null,
+        "key": null,
+        "noteIdx": 2,
+        "notesInThisBar": 3,
+        "notesInThisGroup": null,
+        "sig": {},
+      },
+      "match": {
+        "length": 1,
+        "start": 7,
+        "string": "#",
+      },
+      "note": {
+        "match": {
+          "length": 1,
+          "start": 0,
+          "string": "#",
+        },
+        "type": "rest",
+      },
+    },
+    "noteIdx": 2,
+    "sig": {},
+    "startAt": {
+      "beatClock": [
+        0,
+        2,
+        2,
+      ],
+      "beatClockStr": "0:2:2",
+    },
+  },
+  {
+    "chord": "A",
+    "duration": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+      "tick": "T512",
+    },
+    "key": "C",
+    "keyValues": [
+      9,
+      13,
+      16,
+    ],
+    "keys": [
+      "A3",
+      "C#4",
+      "E4",
+    ],
+    "match": {
+      "data": {
+        "bar": 1,
+        "groupDepth": 0,
+        "isDegree": false,
+        "key": null,
+        "noteIdx": 3,
+        "notesInThisBar": 1,
+        "notesInThisGroup": null,
+        "sig": {},
+      },
+      "match": {
+        "length": 4,
+        "start": 11,
+        "string": "AonG",
+      },
+      "note": {
+        "detail": {
+          "chordName": "A",
+          "originalChordName": "AonG",
+          "qualities": [],
+          "root": "A",
+          "warns": [],
+        },
+        "isDegree": false,
+        "keyValues": [
+          9,
+          13,
+          16,
+        ],
+        "keys": [
+          "A3",
+          "C#4",
+          "E4",
+        ],
+        "match": {
+          "length": 4,
+          "start": 0,
+          "string": "AonG",
+        },
+        "octave": 0,
+        "resolveKey": null,
+        "type": "note",
+      },
+    },
+    "noteIdx": 3,
+    "sig": {},
+    "startAt": {
+      "beatClock": [
+        0,
+        3,
+        3,
+      ],
+      "beatClockStr": "0:3:3",
+    },
+  },
+]
+`;
+
+exports[`chord-parser > parseChordProgression > should parse with Signature 1`] = `
+[
+  {
+    "chord": "C",
+    "duration": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+      "tick": "T512",
+    },
+    "key": "C",
+    "keyValues": [
+      0,
+      4,
+      7,
+    ],
+    "keys": [
+      "C3",
+      "E3",
+      "G3",
+    ],
+    "match": {
+      "data": {
+        "bar": 0,
+        "groupDepth": 0,
+        "isDegree": true,
+        "key": null,
+        "noteIdx": 0,
+        "notesInThisBar": 1,
+        "notesInThisGroup": null,
+        "sig": {
+          "11": {
+            "isDegree": false,
+            "offset": -1,
+          },
+          "9": {
+            "isDegree": false,
+            "offset": -1,
+          },
+        },
+      },
+      "match": {
+        "length": 1,
+        "start": 10,
+        "string": "I",
+      },
+      "note": {
+        "detail": {
+          "chordName": "C",
+          "originalChordName": "I",
+          "qualities": [],
+          "root": "C",
+          "warns": [],
+        },
+        "isDegree": true,
+        "keyValues": [
+          0,
+          4,
+          7,
+        ],
+        "keys": [
+          "C3",
+          "E3",
+          "G3",
+        ],
+        "match": {
+          "length": 1,
+          "start": 0,
+          "string": "I",
+        },
+        "octave": 0,
+        "resolveKey": null,
+        "type": "note",
+      },
+    },
+    "noteIdx": 0,
+    "sig": [
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 9,
+      },
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 11,
+      },
+    ],
+    "startAt": {
+      "beatClock": [
+        0,
+        0,
+        0,
+      ],
+      "beatClockStr": "0:0:0",
+    },
+  },
+  {
+    "chord": "D",
+    "duration": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+      "tick": "T512",
+    },
+    "key": "C",
+    "keyValues": [
+      2,
+      6,
+      9,
+    ],
+    "keys": [
+      "D3",
+      "F#3",
+      "A3",
+    ],
+    "match": {
+      "data": {
+        "bar": 1,
+        "groupDepth": 0,
+        "isDegree": true,
+        "key": null,
+        "noteIdx": 1,
+        "notesInThisBar": 1,
+        "notesInThisGroup": null,
+        "sig": {
+          "11": {
+            "isDegree": false,
+            "offset": -1,
+          },
+          "9": {
+            "isDegree": false,
+            "offset": -1,
+          },
+        },
+      },
+      "match": {
+        "length": 2,
+        "start": 14,
+        "string": "II",
+      },
+      "note": {
+        "detail": {
+          "chordName": "D",
+          "originalChordName": "II",
+          "qualities": [],
+          "root": "D",
+          "warns": [],
+        },
+        "isDegree": true,
+        "keyValues": [
+          2,
+          6,
+          9,
+        ],
+        "keys": [
+          "D3",
+          "F#3",
+          "A3",
+        ],
+        "match": {
+          "length": 2,
+          "start": 0,
+          "string": "II",
+        },
+        "octave": 0,
+        "resolveKey": null,
+        "type": "note",
+      },
+    },
+    "noteIdx": 1,
+    "sig": [
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 9,
+      },
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 11,
+      },
+    ],
+    "startAt": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+    },
+  },
+]
+`;
+
+exports[`chord-parser > parseChordProgression > should parse with key change 1`] = `
+[
+  {
+    "chord": "C",
+    "duration": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+      "tick": "T512",
+    },
+    "key": "C",
+    "keyValues": [
+      0,
+      4,
+      7,
+    ],
+    "keys": [
+      "C3",
+      "E3",
+      "G3",
+    ],
+    "match": {
+      "data": {
+        "bar": 0,
+        "groupDepth": 0,
+        "isDegree": false,
+        "key": null,
+        "noteIdx": 0,
+        "notesInThisBar": 1,
+        "notesInThisGroup": null,
+        "sig": {},
+      },
+      "match": {
+        "length": 1,
+        "start": 0,
+        "string": "C",
+      },
+      "note": {
+        "detail": {
+          "chordName": "C",
+          "originalChordName": "C",
+          "qualities": [],
+          "root": "C",
+          "warns": [],
+        },
+        "isDegree": false,
+        "keyValues": [
+          0,
+          4,
+          7,
+        ],
+        "keys": [
+          "C3",
+          "E3",
+          "G3",
+        ],
+        "match": {
+          "length": 1,
+          "start": 0,
+          "string": "C",
+        },
+        "octave": 0,
+        "resolveKey": null,
+        "type": "note",
+      },
+    },
+    "noteIdx": 0,
+    "sig": {},
+    "startAt": {
+      "beatClock": [
+        0,
+        0,
+        0,
+      ],
+      "beatClockStr": "0:0:0",
+    },
+  },
+  {
+    "chord": "C",
+    "duration": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+      "tick": "T512",
+    },
+    "key": "D",
+    "keyValues": [
+      2,
+      6,
+      9,
+    ],
+    "keys": [
+      "D3",
+      "F#3",
+      "A3",
+    ],
+    "match": {
+      "data": {
+        "bar": 1,
+        "groupDepth": 0,
+        "isDegree": true,
+        "key": "D",
+        "noteIdx": 1,
+        "notesInThisBar": 1,
+        "notesInThisGroup": null,
+        "sig": {},
+      },
+      "match": {
+        "length": 1,
+        "start": 10,
+        "string": "I",
+      },
+      "note": {
+        "detail": {
+          "chordName": "C",
+          "originalChordName": "I",
+          "qualities": [],
+          "root": "C",
+          "warns": [],
+        },
+        "isDegree": true,
+        "keyValues": [
+          0,
+          4,
+          7,
+        ],
+        "keys": [
+          "C3",
+          "E3",
+          "G3",
+        ],
+        "match": {
+          "length": 1,
+          "start": 0,
+          "string": "I",
+        },
+        "octave": 0,
+        "resolveKey": null,
+        "type": "note",
+      },
+    },
+    "noteIdx": 1,
+    "sig": {},
+    "startAt": {
+      "beatClock": [
+        1,
+        0,
+        0,
+      ],
+      "beatClockStr": "1:0:0",
+    },
+  },
+]
+`;

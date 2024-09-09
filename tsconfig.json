@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "lib": ["ES2023"],
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "downlevelIteration": true
+  }
+}

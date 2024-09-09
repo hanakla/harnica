@@ -1,0 +1,701 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`chord-parser-2 > parseChordProgression 1`] = `
+[
+  {
+    "chord": {
+      "detail": {
+        "chordName": "C",
+        "degreeRoot": "I",
+        "originalChordName": "C",
+        "qualities": [],
+        "root": "C",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          2,
+          0,
+        ],
+        "beatClockStr": "0:2:0",
+        "tick": "T256",
+      },
+      "isDegree": false,
+      "keyValues": [
+        0,
+        4,
+        7,
+      ],
+      "keys": [
+        "C0",
+        "E0",
+        "G0",
+      ],
+      "octave": 0,
+      "resolveKey": null,
+    },
+    "fragIndex": 0,
+    "isSoundable": true,
+    "match": {
+      "length": 1,
+      "start": 0,
+      "string": "C",
+    },
+    "noteIndex": 0,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 1,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 1,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 2,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 2,
+      "string": "|",
+    },
+    "type": "barSeparator",
+  },
+  {
+    "fragIndex": 3,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 3,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "Am",
+        "degreeRoot": "VI",
+        "originalChordName": "Am",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+        ],
+        "root": "A",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          2,
+          0,
+        ],
+        "beatClockStr": "0:2:0",
+        "tick": "T256",
+      },
+      "isDegree": false,
+      "keyValues": [
+        9,
+        12,
+        16,
+      ],
+      "keys": [
+        "A0",
+        "C1",
+        "E1",
+      ],
+      "octave": 0,
+      "resolveKey": null,
+    },
+    "fragIndex": 4,
+    "isSoundable": true,
+    "match": {
+      "length": 2,
+      "start": 4,
+      "string": "Am",
+    },
+    "noteIndex": 1,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 5,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 6,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 6,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 7,
+      "string": "|",
+    },
+    "type": "barSeparator",
+  },
+  {
+    "fragIndex": 7,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 8,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "Fm",
+        "degreeRoot": "III#",
+        "originalChordName": "Fm",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+        ],
+        "root": "F",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          2,
+          0,
+        ],
+        "beatClockStr": "0:2:0",
+        "tick": "T256",
+      },
+      "isDegree": false,
+      "keyValues": [
+        5,
+        8,
+        12,
+      ],
+      "keys": [
+        "F0",
+        "G#0",
+        "C1",
+      ],
+      "octave": 0,
+      "resolveKey": null,
+    },
+    "fragIndex": 8,
+    "isSoundable": true,
+    "match": {
+      "length": 2,
+      "start": 9,
+      "string": "Fm",
+    },
+    "noteIndex": 2,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 9,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 11,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 10,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 12,
+      "string": "(",
+    },
+    "type": "braceBegin",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "Dm",
+        "degreeRoot": "II",
+        "originalChordName": "Dm",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+        ],
+        "root": "D",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          1,
+          0,
+        ],
+        "beatClockStr": "0:1:0",
+        "tick": "T128",
+      },
+      "isDegree": false,
+      "keyValues": [
+        2,
+        5,
+        9,
+      ],
+      "keys": [
+        "D0",
+        "F0",
+        "A0",
+      ],
+      "octave": 0,
+      "resolveKey": null,
+    },
+    "fragIndex": 11,
+    "isSoundable": true,
+    "match": {
+      "length": 2,
+      "start": 13,
+      "string": "Dm",
+    },
+    "noteIndex": 3,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 12,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 15,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "G7",
+        "degreeRoot": "V",
+        "originalChordName": "G7",
+        "qualities": [
+          [
+            "tension",
+            "7",
+          ],
+        ],
+        "root": "G",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          1,
+          0,
+        ],
+        "beatClockStr": "0:1:0",
+        "tick": "T128",
+      },
+      "isDegree": false,
+      "keyValues": [
+        7,
+        11,
+        14,
+        17,
+      ],
+      "keys": [
+        "G0",
+        "B0",
+        "D1",
+        "F1",
+      ],
+      "octave": 0,
+      "resolveKey": null,
+    },
+    "fragIndex": 13,
+    "isSoundable": true,
+    "match": {
+      "length": 2,
+      "start": 16,
+      "string": "G7",
+    },
+    "noteIndex": 4,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 14,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 18,
+      "string": ")",
+    },
+    "type": "braceEnd",
+  },
+  {
+    "fragIndex": 15,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 19,
+      "string": "
+",
+    },
+    "type": "barSeparator",
+  },
+  {
+    "fragIndex": 16,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 20,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 17,
+    "isSoundable": false,
+    "match": {
+      "length": 10,
+      "start": 21,
+      "string": "# COMMENT
+",
+    },
+    "type": "comment",
+  },
+  {
+    "fragIndex": 18,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 31,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "C",
+        "degreeRoot": "I",
+        "originalChordName": "I",
+        "qualities": [],
+        "root": "C",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          2,
+          0,
+        ],
+        "beatClockStr": "0:2:0",
+        "tick": "T256",
+      },
+      "isDegree": true,
+      "keyValues": [
+        0,
+        4,
+        7,
+      ],
+      "keys": [
+        "C1",
+        "E1",
+        "G1",
+      ],
+      "octave": 0,
+      "resolveKey": "C",
+    },
+    "fragIndex": 19,
+    "isSoundable": true,
+    "match": {
+      "length": 1,
+      "start": 32,
+      "string": "I",
+    },
+    "noteIndex": 5,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 20,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 33,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 21,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 34,
+      "string": "|",
+    },
+    "type": "barSeparator",
+  },
+  {
+    "fragIndex": 22,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 35,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "Gsus4",
+        "degreeRoot": "V",
+        "originalChordName": "Gsus4",
+        "qualities": [
+          [
+            "sus",
+            "4",
+          ],
+        ],
+        "root": "G",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          2,
+          0,
+        ],
+        "beatClockStr": "0:2:0",
+        "tick": "T256",
+      },
+      "isDegree": false,
+      "keyValues": [
+        7,
+        12,
+        14,
+      ],
+      "keys": [
+        "G0",
+        "C1",
+        "D1",
+      ],
+      "octave": 0,
+      "resolveKey": null,
+    },
+    "fragIndex": 23,
+    "isSoundable": true,
+    "match": {
+      "length": 5,
+      "start": 36,
+      "string": "Gsus4",
+    },
+    "noteIndex": 6,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 24,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 41,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "Dm",
+        "degreeRoot": "II",
+        "originalChordName": "IIm",
+        "qualities": [
+          [
+            "quality",
+            "m",
+          ],
+        ],
+        "root": "D",
+        "warns": [],
+      },
+      "duration": {
+        "beatClock": [
+          0,
+          2,
+          0,
+        ],
+        "beatClockStr": "0:2:0",
+        "tick": "T256",
+      },
+      "isDegree": true,
+      "keyValues": [
+        2,
+        5,
+        9,
+      ],
+      "keys": [
+        "D1",
+        "F1",
+        "A1",
+      ],
+      "octave": 0,
+      "resolveKey": "C",
+    },
+    "fragIndex": 25,
+    "isSoundable": true,
+    "match": {
+      "length": 3,
+      "start": 42,
+      "string": "IIm",
+    },
+    "noteIndex": 7,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 26,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 45,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 27,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 46,
+      "string": "|",
+    },
+    "type": "barSeparator",
+  },
+  {
+    "fragIndex": 28,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 47,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "Eadd4/G",
+        "degreeRoot": "III",
+        "originalChordName": "IIIadd4/V",
+        "qualities": [
+          [
+            "tension",
+            "add4",
+          ],
+        ],
+        "root": "E",
+        "warns": [],
+      },
+      "duration": null,
+      "isDegree": true,
+      "keyValues": [
+        -5,
+        4,
+        8,
+        11,
+      ],
+      "keys": [
+        "G0",
+        "E1",
+        "G#1",
+        "B1",
+      ],
+      "octave": 0,
+      "resolveKey": "C",
+    },
+    "fragIndex": 29,
+    "isSoundable": true,
+    "match": {
+      "length": 9,
+      "start": 48,
+      "string": "IIIadd4/V",
+    },
+    "noteIndex": 8,
+    "type": "chord",
+  },
+  {
+    "fragIndex": 30,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 57,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "fragIndex": 31,
+    "isSoundable": false,
+    "match": {
+      "length": 11,
+      "start": 58,
+      "string": "# COMMENT #",
+    },
+    "type": "comment",
+  },
+  {
+    "fragIndex": 32,
+    "isSoundable": false,
+    "match": {
+      "length": 1,
+      "start": 69,
+      "string": " ",
+    },
+    "type": "characters",
+  },
+  {
+    "chord": {
+      "detail": {
+        "chordName": "C",
+        "degreeRoot": "I",
+        "originalChordName": "I",
+        "qualities": [],
+        "root": "C",
+        "warns": [],
+      },
+      "duration": null,
+      "isDegree": true,
+      "keyValues": [
+        0,
+        4,
+        7,
+      ],
+      "keys": [
+        "C1",
+        "E1",
+        "G1",
+      ],
+      "octave": 0,
+      "resolveKey": "C",
+    },
+    "fragIndex": 33,
+    "isSoundable": true,
+    "match": {
+      "length": 1,
+      "start": 70,
+      "string": "I",
+    },
+    "noteIndex": 9,
+    "type": "chord",
+  },
+]
+`;

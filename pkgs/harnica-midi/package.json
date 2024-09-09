@@ -1,0 +1,27 @@
+{
+  "name": "harnica-midi",
+  "packageManager": "yarn@4.0.0-rc.38",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "dedent": "^1.5.3",
+    "midi-writer-js": "^3.1.1",
+    "tsx": "^4.7.2",
+    "vite": "^4.5.2",
+    "vite-plugin-dts": "^3.7.2",
+    "vitest": "^0.31.4"
+  }
+}

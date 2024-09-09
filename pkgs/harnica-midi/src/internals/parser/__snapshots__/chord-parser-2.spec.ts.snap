@@ -1,0 +1,115 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`chord-parser-2 > parseChordProgression > parseChordProgression 1`] = `
+[
+  "Key=A",
+  " ",
+  "C",
+  " ",
+  "|",
+  " ",
+  "Am",
+  " ",
+  "|",
+  " ",
+  "Fm",
+  " ",
+  "(",
+  "Dm",
+  " ",
+  "G7)",
+  "
+",
+  " ",
+  "# COMMENT
+",
+  " ",
+  "I",
+  " ",
+  "|",
+  " ",
+  "Gsus4",
+  " ",
+  "IIm",
+  " ",
+  "|",
+  " ",
+  "IIIadd4/V",
+  " ",
+  "# COMMENT #",
+  " ",
+  "I",
+]
+`;
+
+exports[`chord-parser-2 > parseChordProgression > parseChordProgression 2`] = `
+[
+  "C",
+  "Am",
+  "Fm",
+  "Dm",
+  "G7",
+  "I",
+  "Gsus4",
+  "IIm",
+  "IIIadd4",
+  "I",
+]
+`;
+
+exports[`chord-parser-2 > parseChordProgression 1`] = `
+[
+  "Key=A",
+  " ",
+  "C",
+  " ",
+  "|",
+  " ",
+  "Am",
+  " ",
+  "|",
+  " ",
+  "Fm",
+  " ",
+  "(",
+  "Dm",
+  " ",
+  "G7)",
+  "
+",
+  " ",
+  "# COMMENT
+",
+  " ",
+  "I",
+  " ",
+  "|",
+  " ",
+  "Gsus4",
+  " ",
+  "IIm",
+  " ",
+  "|",
+  " ",
+  "IIIadd4/V",
+  " ",
+  "# COMMENT #",
+  " ",
+  "I",
+]
+`;
+
+exports[`chord-parser-2 > parseChordProgression 2`] = `
+[
+  "C",
+  "Am",
+  "Fm",
+  "Dm",
+  "G7",
+  "I",
+  "Gsus4",
+  "IIm",
+  "IIIadd4",
+  "I",
+]
+`;

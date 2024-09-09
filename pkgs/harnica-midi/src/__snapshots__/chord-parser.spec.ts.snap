@@ -1,0 +1,68 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`chord-parser > parseChordProgression > should parse with Signature 1`] = `
+[
+  {
+    "chord": "C",
+    "duration": {
+      "tick": "T512",
+      "transport": "0:4:0",
+    },
+    "key": "C",
+    "keyValues": [
+      0,
+      4,
+      7,
+    ],
+    "keys": [
+      "C4",
+      "E4",
+      "G4",
+    ],
+    "noteIdx": 0,
+    "sig": [
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 9,
+      },
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 11,
+      },
+    ],
+  },
+  {
+    "chord": "D",
+    "duration": {
+      "tick": "T512",
+      "transport": "0:4:0",
+    },
+    "key": "C",
+    "keyValues": [
+      2,
+      6,
+      9,
+    ],
+    "keys": [
+      "D4",
+      "F#4",
+      "A4",
+    ],
+    "noteIdx": 1,
+    "sig": [
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 9,
+      },
+      {
+        "isDegree": false,
+        "offset": -1,
+        "targetKey": 11,
+      },
+    ],
+  },
+]
+`;
