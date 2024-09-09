@@ -8,7 +8,7 @@ import {
   type NoteFragmentType,
   getDegreeDetailByChordName,
   beatclock,
-} from "harnica-midi";
+} from "@hanakla/harnica-midi";
 import { klona } from "klona";
 import {
   compressToEncodedURIComponent,
@@ -239,7 +239,7 @@ export function ScoreEditor() {
           ],
         };
       })
-      .filter((v): v is Exclude<typeof v, null | undefined> => v != null);
+      .filter((v): v is Exclude => v != null);
 
     const converted = replaceStrings(content, maps);
     const nextProg = parseChordProgression(converted);

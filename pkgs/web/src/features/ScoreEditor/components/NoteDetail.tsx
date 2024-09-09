@@ -11,7 +11,7 @@ import {
   analysis,
   suggests,
   parseStringAsSingleChordNote,
-} from "harnica-midi";
+} from "@hanakla/harnica-midi";
 import { MouseEvent, ReactNode, UIEvent, memo, useMemo } from "react";
 import {
   RiAddFill,
@@ -48,10 +48,7 @@ type Props = {
   onMoveCursorToNote: OnMoveCursorToNote;
 };
 
-const TRIAD_CHORDS_ORDER: (keyof Exclude<
-  ReturnType<typeof suggests.getTDSChordsByKeyName>["data"],
-  null
->)[] = [
+const TRIAD_CHORDS_ORDER: (keyof Exclude)[] = [
   "tonic",
   "secondSubDominant",
   "secondTonic",
@@ -76,7 +73,7 @@ export function NoteDetail({
   const sampler = useTone();
   const editorStore = useEditorStore();
 
-  const onClickSuggest = useEvent((e: MouseEvent<HTMLOrSVGElement>) => {
+  const onClickSuggest = useEvent((e: MouseEvent) => {
     e.stopPropagation();
 
     const note = e.currentTarget.dataset.note;
@@ -91,7 +88,7 @@ export function NoteDetail({
     playChord.current(chord.detail.originalChordName, octave);
   });
 
-  const onDblClickSuggest = useEvent((e: MouseEvent<HTMLOrSVGElement>) => {
+  const onDblClickSuggest = useEvent((e: MouseEvent) => {
     e.stopPropagation();
 
     const note = e.currentTarget.dataset.note;
@@ -115,21 +112,19 @@ export function NoteDetail({
     playChord.current(notes?.chord.detail.originalChordName, octave);
   });
 
-  const handleClickChordSuggest = useEvent(
-    (e: MouseEvent<HTMLOrSVGElement>) => {
-      const note = e.currentTarget.dataset.note;
-      const octave = e.currentTarget.dataset.octave
-        ? parseInt(e.currentTarget.dataset.octave)
-        : 0;
+  const handleClickChordSuggest = useEvent((e: MouseEvent) => {
+    const note = e.currentTarget.dataset.note;
+    const octave = e.currentTarget.dataset.octave
+      ? parseInt(e.currentTarget.dataset.octave)
+      : 0;
 
-      if (!note) return;
+    if (!note) return;
 
-      onReplaceNote(
-        matchNote.noteIndex,
-        (octave === 1 ? "+" : octave === -1 ? "-" : "") + note,
-      );
-    },
-  );
+    onReplaceNote(
+      matchNote.noteIndex,
+      (octave === 1 ? "+" : octave === -1 ? "-" : "") + note,
+    );
+  });
 
   const handleClickMoveCursorToNote = useEvent((e) => {
     const noteIndex = parseInt(e.currentTarget.dataset.noteIndex);
@@ -138,16 +133,14 @@ export function NoteDetail({
     onMoveCursorToNote(noteIndex);
   });
 
-  const handleClickConvertToRelative = useEvent(
-    (e: MouseEvent<HTMLOrSVGElement>) => {
-      e.stopPropagation();
+  const handleClickConvertToRelative = useEvent((e: MouseEvent) => {
+    e.stopPropagation();
 
-      // const note = parseStringAsSingleChordNote(noteText);
-      // if (note.type !== "note") return;
-    },
-  );
+    // const note = parseStringAsSingleChordNote(noteText);
+    // if (note.type !== "note") return;
+  });
 
-  const handleClickInsertAfter = useEvent((e: MouseEvent<HTMLOrSVGElement>) => {
+  const handleClickInsertAfter = useEvent((e: MouseEvent) => {
     e.stopPropagation();
 
     const note = e.currentTarget.dataset.note;
@@ -174,7 +167,7 @@ export function NoteDetail({
     sampler?.triggerAttackRelease(normalized.chord.keys, "1s");
   });
 
-  const handleClickToggleNTh = useEvent((e: MouseEvent<HTMLOrSVGElement>) => {
+  const handleClickToggleNTh = useEvent((e: MouseEvent) => {
     const nth = e.currentTarget.dataset.nth;
     if (!nth) return;
 
@@ -927,10 +920,10 @@ const ChordSuggest = ({
   octave?: number;
   highlight?: "green" | "yellow" | false;
   onClickListen: (note: string, octave: number) => void;
-  onClickReplace: (e: MouseEvent<HTMLOrSVGElement>) => void;
-  onClickInsertNoteAfter: (e: MouseEvent<HTMLOrSVGElement>) => void;
+  onClickReplace: (e: MouseEvent) => void;
+  onClickInsertNoteAfter: (e: MouseEvent) => void;
 }) => {
-  const handleClickListen = useEvent((e: MouseEvent<HTMLOrSVGElement>) => {
+  const handleClickListen = useEvent((e: MouseEvent) => {
     e.stopPropagation();
     onClickListen(
       e.currentTarget.dataset.note!,
@@ -940,7 +933,7 @@ const ChordSuggest = ({
     );
   });
 
-  const handleClickReplace = useEvent((e: MouseEvent<HTMLOrSVGElement>) => {
+  const handleClickReplace = useEvent((e: MouseEvent) => {
     e.stopPropagation();
     onClickReplace(e);
   });
@@ -1079,7 +1072,7 @@ const FlexBreak = styled.div`
   height: 0;
 `;
 
-const TipItemLI = styled.li<{ indent?: number }>`
+const TipItemLI = styled.li`
   /* display: flex; */
 
   ${(p) =>
@@ -1089,7 +1082,7 @@ const TipItemLI = styled.li<{ indent?: number }>`
     `}
 `;
 
-const IndentDiv = styled.div<{ indent?: number }>`
+const IndentDiv = styled.div`
   ${(p) =>
     p.indent &&
     css`
@@ -1113,7 +1106,7 @@ const IntervalSpan = styled.span`
   color: #fff;
 `;
 
-const ChordTip = styled.div<{ $kind?: "primary" }>`
+const ChordTip = styled.div`
   display: inline-block;
   min-width: 16px;
   padding: 2px 4px;

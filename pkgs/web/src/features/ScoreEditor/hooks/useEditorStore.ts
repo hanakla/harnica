@@ -1,4 +1,4 @@
-import { type NoteFragmentType } from "harnica-midi";
+import { type NoteFragmentType } from "@hanakla/harnica-midi";
 import { StoreApi, create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -10,7 +10,7 @@ type Store = {
   value: string;
   setPlayingNoteIndex: (index: number | null) => void;
   setProgression: (prog: NoteFragmentType[]) => void;
-  set: StoreApi<Store>["setState"];
+  set: StoreApi["setState"];
 };
 
 export const useEditorStore = create<Store>()(

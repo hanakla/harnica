@@ -5,7 +5,7 @@ import {
   NoteFragment,
   NoteFragmentType,
   getDegreeDetailByChordName,
-} from "harnica-midi";
+} from "@hanakla/harnica-midi";
 import { MouseEvent, memo, useEffect, useId, useMemo } from "react";
 import useEvent from "react-use-event-hook";
 import {
@@ -69,7 +69,7 @@ const NoteLeaf = memo(function NoteLeaf({
     alsoFloat.refs.setReference,
   ]);
 
-  const onClick = useEvent((e: MouseEvent<HTMLElement>) => {
+  const onClick = useEvent((e: MouseEvent) => {
     e.preventDefault();
     sampler?.triggerAttackRelease(chord.keys, "1s");
   });
@@ -138,9 +138,7 @@ const NoteLeaf = memo(function NoteLeaf({
     ).data;
     if (!functions) return [];
 
-    return Object.entries(functions).filter(([k, v]) => v != false) as Array<
-      [keyof typeof functions, (typeof functions)["tonic"]]
-    >;
+    return Object.entries(functions).filter(([k, v]) => v != false) as Array;
   }, [chord]);
 
   return (

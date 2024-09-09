@@ -3,7 +3,7 @@ import {
   type NoteFragmentType,
   normalizeKeyValue,
   getDegreeNameFromKeyValue,
-} from "harnica-midi";
+} from "@hanakla/harnica-midi";
 import React, { useState, useMemo, ReactNode, useEffect } from "react";
 import { useEffectOnce, useMeasure } from "react-use";
 import useEvent from "react-use-event-hook";
@@ -48,10 +48,7 @@ function roundToNearXn(value: number, x: number) {
   return Math.round(value / x) * x;
 }
 
-const PianoRoll: React.FC<ProgressionNoteProps> = ({
-  notes,
-  onMoveCursorToNote,
-}) => {
+const PianoRoll: React.FC = ({ notes, onMoveCursorToNote }) => {
   const editorStore = useEditorStore();
   const sampler = useTone();
 
@@ -63,7 +60,7 @@ const PianoRoll: React.FC<ProgressionNoteProps> = ({
   const [scrollX, setScrollX] = useState(0);
   const [scrollY, setScrollY] = useState(0); // added this for vertical scroll
 
-  const handleClickNoteKey = useEvent((e: React.MouseEvent<SVGElement>) => {
+  const handleClickNoteKey = useEvent((e: React.MouseEvent) => {
     const key = e.currentTarget.dataset.key;
     if (!key) return;
 
@@ -78,19 +75,17 @@ const PianoRoll: React.FC<ProgressionNoteProps> = ({
     setIsDragging(false);
   });
 
-  const handleDrag = useEvent(
-    (event: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
-      if (!isDragging) return;
-      const newScrollX = clamp(scrollX - event.movementX, 0, MAX_SCROLL_X);
-      const newScrollY = clamp(
-        scrollY + event.movementY,
-        0,
-        MAX_SCROLL_Y - height,
-      );
-      setScrollX(newScrollX);
-      setScrollY(newScrollY);
-    },
-  );
+  const handleDrag = useEvent((event: React.MouseEvent) => {
+    if (!isDragging) return;
+    const newScrollX = clamp(scrollX - event.movementX, 0, MAX_SCROLL_X);
+    const newScrollY = clamp(
+      scrollY + event.movementY,
+      0,
+      MAX_SCROLL_Y - height,
+    );
+    setScrollX(newScrollX);
+    setScrollY(newScrollY);
+  });
 
   const handleWheel = useEvent((event: WheelEvent) => {
     event.stopPropagation();
@@ -99,20 +94,18 @@ const PianoRoll: React.FC<ProgressionNoteProps> = ({
     setScrollY((prev) => clamp(prev - event.deltaY, 0, MAX_SCROLL_Y - height));
   });
 
-  const handleClickNote = useEvent(
-    (event: React.MouseEvent<SVGRectElement>) => {
-      const noteIndex = Number(event.currentTarget.dataset.noteIndex);
-      onMoveCursorToNote(noteIndex);
-    },
-  );
+  const handleClickNote = useEvent((event: React.MouseEvent) => {
+    const noteIndex = Number(event.currentTarget.dataset.noteIndex);
+    onMoveCursorToNote(noteIndex);
+  });
 
   const [renderedNotes, noteXPositions, noteYPositions] = useMemo(() => {
     const startKey = 0;
     const endKey = 1000;
 
     const noteComponents: ReactNode[] = [];
-    const noteXPositions: Record<number, number> = {};
-    const noteYPositions: Record<number, number> = {};
+    const noteXPositions: Record = {};
+    const noteYPositions: Record = {};
 
     notes.map((note) => {
       if (note.type !== "chord") return null;

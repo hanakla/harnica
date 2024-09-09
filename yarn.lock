@@ -1967,6 +1967,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hanakla/harnica-midi@workspace:pkgs/harnica-midi":
+  version: 0.0.0-use.local
+  resolution: "@hanakla/harnica-midi@workspace:pkgs/harnica-midi"
+  dependencies:
+    dedent: "npm:^1.5.3"
+    midi-writer-js: "npm:^3.1.1"
+    tsx: "npm:^4.7.2"
+    typescript: "npm:^5.6.2"
+    vite: "npm:^4.5.2"
+    vite-plugin-dts: "npm:^3.7.2"
+    vitest: "npm:^0.31.4"
+  languageName: unknown
+  linkType: soft
+
 "@hanakla/rescue@npm:^1.0.3":
   version: 1.0.4
   resolution: "@hanakla/rescue@npm:1.0.4"
@@ -5998,20 +6012,6 @@ __metadata:
   checksum: 10/6dd60dba97007b21e3a829fab3f771803cc1292977fe610e240ea72afd67e5690ac9eeaafc4a99710e78962e5936ab5a460787c2a1180f1cb0ccfac37d29f897
   languageName: node
   linkType: hard
-
-"harnica-midi@workspace:pkgs/harnica-midi":
-  version: 0.0.0-use.local
-  resolution: "harnica-midi@workspace:pkgs/harnica-midi"
-  dependencies:
-    dedent: "npm:^1.5.3"
-    midi-writer-js: "npm:^3.1.1"
-    tsx: "npm:^4.7.2"
-    typescript: "npm:^5.6.2"
-    vite: "npm:^4.5.2"
-    vite-plugin-dts: "npm:^3.7.2"
-    vitest: "npm:^0.31.4"
-  languageName: unknown
-  linkType: soft
 
 "harnica-root@workspace:.":
   version: 0.0.0-use.local
