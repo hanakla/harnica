@@ -1,6 +1,6 @@
 import { DEFAULT_OCTAVE } from "../constants";
-import { BeatClock } from "../types";
-import { KeyString, NoteFragment, NoteFragmentType, NoteMatch } from "./types";
+import { BeatClock, KeyString, assertKeyString } from "../types";
+import { NoteFragment, NoteFragmentType, NoteMatch } from "./types";
 import { KEY_CHNAGE_REGEX, parseKeyChange } from "./parseKeyChange";
 import { ALPHA_NOTE_REGEX, parseAlphabetName } from "./parseAlphaName";
 import { DEGREE_NOTE_REGEX, parseDegreeName } from "./parseDegreeName";
@@ -23,7 +23,7 @@ const COMMENT_REGEX = /^[#].*?[#]$/;
 
 export function parseChordProgression(
   progression: string,
-  key: KeyString = "C",
+  key: string = "C",
   sigBeats: number = 4,
   baseOctave: number = DEFAULT_OCTAVE,
 ) {
@@ -33,12 +33,16 @@ export function parseChordProgression(
   let fragIndex = 0;
   let noteIndex = 0;
 
+  assertKeyString(currentKey);
+
   while (progression.length !== 0) {
     let match: RegExpExecArray | null;
 
     if ((match = KEY_CHNAGE_REGEX.exec(progression))) {
       const key = match[1];
       currentKey = key;
+
+      assertKeyString(currentKey);
 
       const keyChange = parseKeyChange(match[0]);
 
@@ -446,9 +450,11 @@ function countSoundableNotesShallowly(
 
 export function parseStringAsSingleChordNote(
   str: string,
-  key: KeyString = "C",
+  key: string = "C",
   baseOctave: number = DEFAULT_OCTAVE,
 ) {
+  assertKeyString(key);
+
   const notes = parseChordProgression(str, key, 4, baseOctave);
   return (notes.find((n) => n.type === "chord") ??
     null) as NoteFragment.ChordNote | null;

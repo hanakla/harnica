@@ -1,4 +1,4 @@
-import { ChordIR, KeyString, NoteFragment } from "../internals/parser/types";
+import { NoteFragment } from "../internals/parser/types";
 
 import { convertChordNoteToChordIR } from "@/internals/conversion/convertChordNoteToChordIR";
 import { getKeyValueByKeyName } from "@/internals/key-calculation/getKeyValueBy";

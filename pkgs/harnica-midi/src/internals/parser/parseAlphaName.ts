@@ -2,10 +2,11 @@ import { ALPHA_TO_KEYVALUE_MAP, DEFAULT_OCTAVE } from "@/internals/constants";
 import { getKeyValueByKeyName } from "@/internals/key-calculation/getKeyValueBy";
 import { chordIRToNoteChord } from "./chordIRToNoteChord";
 import { parseQuality } from "./parseQuality";
-import { ChordIR, KeyString, NoteFragment } from "./types";
+import { ChordIR, NoteFragment } from "./types";
 import { normalizeKeyValue } from "@/internals/key-calculation/normalizeKeyValue";
 import { lintNote, lintQuality } from "./lintNote";
 import { parseApplyKeyString } from "./parseKeyChange";
+import { KeyString } from "../types";
 
 export const ALPHA_NOTE_REGEX =
   /^([+-]?)([A-G](?:[#b\-+](?!5))?)([^/|\nA-G ]*)(?:\/([+-]?[A-G][#b]?))?/;
@@ -40,7 +41,7 @@ function createChordIRByAlpha(
 
   if (!match || !applyKey) return null;
 
-  const keyKeyValue = getKeyValueByKeyName(applyKey.key);
+  const keyKeyValue = getKeyValueByKeyName(applyKey.key)!;
   const octaveSign = match[1];
   const root = match[2];
   const qualities = parseQuality(match[3]);
@@ -51,7 +52,7 @@ function createChordIRByAlpha(
   if (slash != null && slashKeyValue == null) return null;
 
   const ir: ChordIR = {
-    root: getKeyValueByKeyName(root) - keyKeyValue,
+    root: getKeyValueByKeyName(root)! - keyKeyValue,
     qualities,
     slash: slashKeyValue != null ? slashKeyValue - keyKeyValue : null,
     omitted: omit

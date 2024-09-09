@@ -5,6 +5,7 @@ import { getDegreeNameFromKeyValue } from "./conversion/getDegreeNameFromKeyValu
 import { getKeyValueByKeyName } from "./key-calculation/getKeyValueBy";
 import { NoteFragment } from "./parser/types";
 import { parseApplyKeyString } from "./parser/parseKeyChange";
+import { assertKeyString } from "./types";
 
 export function createNoteNote(
   keyValues: number[],
@@ -12,6 +13,8 @@ export function createNoteNote(
   key: string | null = null,
   baseOctave: number = DEFAULT_OCTAVE,
 ): NoteFragment.ChordNote {
+  if (key != null) assertKeyString(key);
+
   const chord = getChordDetailFromKeyValues(keyValues);
   let originalChordName = chord.chordName;
 
@@ -48,6 +51,7 @@ export function createNoteNote(
         rootName: chord.rootKeyName,
         rootDegreeName: chord.rootDegreeName,
         chordName: chord.chordName,
+        octaveValue: baseOctave + chord.octave,
         appliedKey: key ? parseApplyKeyString(key) : null,
         rootKeyValue: chord.rootKeyValue,
         slashKeyValue: null, // TODO: Implement slash,

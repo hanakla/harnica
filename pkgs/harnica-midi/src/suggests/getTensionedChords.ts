@@ -2,6 +2,7 @@ import { getAlphabetNameFromKeyValue } from "@/internals/conversion/getAlphabetN
 import { getChordDetailFromKeyValues } from "@/internals/conversion/getChordDetailFromKeyValues";
 import { ChordSuggest } from "./toDegreeSuggest";
 import { parseStringAsSingleChordNote } from "@/internals/parser/chord-parser-2";
+import { KeyString } from "@/internals/types";
 
 export function getTensionedChords(
   chord: string,
@@ -11,7 +12,7 @@ export function getTensionedChords(
   eleventh: ChordSuggest;
   thirteenth: ChordSuggest;
 } | null {
-  const notes = parseStringAsSingleChordNote(chord, "C");
+  const notes = parseStringAsSingleChordNote(chord, "C" as KeyString);
   if (!notes) return null;
 
   const keyValues = notes.chord.keyValues.map((value) => value + tension);

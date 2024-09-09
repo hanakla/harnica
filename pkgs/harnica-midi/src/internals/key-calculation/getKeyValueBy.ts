@@ -19,9 +19,8 @@ export function getKeyValueBy(key: string): Maybe<number> {
  */
 export function getKeyValueByKeyName(key: string) {
   const match = /^([+-]?)([A-G][#b-]?)$/.exec(key);
-  if (!match) return null;
-  // if (!match)
-  //   throw new Error(`getKeyValueByKeyName: Invalid key string: ${key}`);
+  if (!match)
+    throw new Error(`getKeyValueByKeyName: Invalid key string: ${key}`);
 
   const [, accidental, note] = match;
 

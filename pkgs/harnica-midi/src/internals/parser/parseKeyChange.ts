@@ -2,7 +2,7 @@ import { ApplyKey, NoteFragment } from "./types";
 
 export const KEY_CHNAGE_REGEX = /^[Kk]ey=([A-G][#b]?[Mm]?)/;
 
-const TONE_REGEX = /^([A-G][#b]?)([Mm])?$/;
+const TONE_REGEX = /^([A-G][#b]?)?$/;
 
 export function parseKeyChange(
   str: string,

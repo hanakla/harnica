@@ -1,4 +1,3 @@
-import { ALPHA_TO_KEYVALUE_MAP } from "../constants";
 import { BeatClock } from "../types";
 import { NoteLintErrors } from "./lintNote";
 
@@ -17,8 +16,6 @@ export type NoteQuality =
       type: "omit" | "dim" | "aug" | "sus" | "add" | "tension",
       argument: string,
     ];
-
-export type KeyString = keyof typeof ALPHA_TO_KEYVALUE_MAP;
 
 /** Alpha/Degreeを問わない中間表現 */
 export type ChordIR = {

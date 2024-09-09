@@ -1,3 +1,4 @@
+import { KeyString } from "../types";
 import { parseDegreeName } from "./parseDegreeName";
 
 describe("parseDegreeName", () => {
@@ -12,10 +13,10 @@ describe("parseDegreeName", () => {
   });
 
   it("slash notes", () => {
-    const actual1 = parseDegreeName("VI/I", "C", 0)!;
+    const actual1 = parseDegreeName("VI/I", "C" as KeyString, 0)!;
     expect(actual1.detail.slashKeyValue).toBe(0);
 
-    const actual2 = parseDegreeName("VI/-I", "C", 0)!;
+    const actual2 = parseDegreeName("VI/-I", "C" as KeyString, 0)!;
     expect(actual2.detail.slashKeyValue).toBe(-12);
   });
 });

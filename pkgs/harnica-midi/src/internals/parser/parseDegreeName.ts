@@ -1,16 +1,17 @@
 import { DEFAULT_KEY, DEGREE_TO_KEYVALUE_MAP } from "../constants";
+import { KeyString } from "../types";
 import { chordIRToNoteChord } from "./chordIRToNoteChord";
 import { lintNote, lintQuality } from "./lintNote";
 import { parseApplyKeyString } from "./parseKeyChange";
 import { parseQuality } from "./parseQuality";
-import { ChordIR, KeyString, NoteFragment } from "./types";
+import { ChordIR, NoteFragment } from "./types";
 
 export const DEGREE_NOTE_REGEX =
   /^([+-]?)([IV]+(?:[#b\-](?!5))?)([^/|\nIV ]*)(?:\/([+-]?[IV]+[#b]?))?/;
 
 export function parseDegreeName(
   note: string,
-  applyingKey: KeyString,
+  applyingKey: string,
   baseOctave: number,
 ): NoteFragment.ChordNote["chord"] | null {
   const matchResult = createChordIRByDegree(note, applyingKey);
@@ -25,7 +26,7 @@ export function isValidDegreeName(note: string): boolean {
 
 function createChordIRByDegree(
   chord: string,
-  applyingKeyName: KeyString = DEFAULT_KEY,
+  applyingKeyName: string = DEFAULT_KEY,
 ): ChordIR | null {
   const applyKey = parseApplyKeyString(applyingKeyName);
   const match = DEGREE_NOTE_REGEX.exec(chord);

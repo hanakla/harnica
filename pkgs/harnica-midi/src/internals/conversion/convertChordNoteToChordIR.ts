@@ -19,7 +19,7 @@ export function convertChordNoteToChordIR({
         ? chord.detail.slashKeyValue - keyKeyValue
         : null,
       warns: [],
-      omitted: null, // TODO: Implement omitted
+      omitted: undefined, // TODO: Implement omitted
     };
   } else {
     return {
@@ -31,7 +31,7 @@ export function convertChordNoteToChordIR({
         ? chord.detail.slashKeyValue - keyKeyValue
         : null,
       warns: [],
-      omitted: null, // TODO: Implement omitted
+      omitted: undefined, // TODO: Implement omitted
     };
   }
 }

@@ -1,3 +1,14 @@
+/** キー名の文字列表現 (e.g. 'C', 'D#', 'Fb') */
+export type KeyString = string & { [keyStringType]: never };
+declare const keyStringType: unique symbol;
+
+const keyStringRegex = /^[A-G][#b]?$/;
+export function assertKeyString(str: string): asserts str is KeyString {
+  if (!keyStringRegex.test(str)) {
+    throw new Error(`Invalid key string: ${str}`);
+  }
+}
+
 export type BeatClock = [bars: number, beats: number, sixteeth: number];
 
 export type NoteQuality =
