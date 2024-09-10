@@ -26,7 +26,6 @@ type EditorSelection = { start: number; end: number };
 
 export namespace RichTextEditor {
   export type Handler = {
-    setCarretPosition: (pos: number) => void;
     updateValue: (value: string, selection?: EditorSelection) => void;
     getSelection: () => EditorSelection | null;
     setSelection: (selection: EditorSelection) => void;
@@ -64,19 +63,6 @@ export const RichTextEditor = memo(
     useImperativeHandle(
       ref,
       () => ({
-        setCarretPosition: (
-          pos: number,
-          { focus }: { focus?: boolean } = {},
-        ) => {
-          setSelectionState({ start: pos, end: pos });
-          onCaretPositionChange?.(pos);
-
-          if (focus) {
-            setTimeout(() => {
-              editorRef.current?.focus();
-            });
-          }
-        },
         updateValue: (value: string, selection?: EditorSelection) => {
           if (selection) {
             setSelectionState(selection);

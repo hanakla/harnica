@@ -27,10 +27,6 @@ export function chordIRToNoteChord(
     keyValues.unshift(keyKeyValue + slash - 12 + octaveKeyValue);
   }
 
-  const hasMajororMinor = qualities.find(
-    ([type, q]) => type === "quality" && (q === "m" || q === "M"),
-  );
-
   const qualityNames = stringifyNoteQualities(qualities);
   const alphabetRootName = getKeyNameByKeyValue(rootKeyValue);
   const alphabetSlashName = slash ? "/" + getKeyNameByKeyValue(slash) : "";
