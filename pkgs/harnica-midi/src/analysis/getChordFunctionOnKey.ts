@@ -4,16 +4,14 @@ import { formatNote } from "@/internals/chord-assembler";
 import { getDegreeDetailByChordName } from "@/internals/conversion/getDegreeDetailByChordName";
 import { Maybe, maybe } from "@/utils/Maybe";
 
-type MatchLevel = "perfect" | "sameRoot" | false;
-
 export type ChordFunctionMatch = {
-  tonic: MatchLevel;
-  secondTonic: MatchLevel;
-  thirdTonic: MatchLevel;
-  dominant: MatchLevel;
-  secondDominant: MatchLevel;
-  subdominant: MatchLevel;
-  secondSubDominant: MatchLevel;
+  tonic: boolean;
+  secondTonic: boolean;
+  thirdTonic: boolean;
+  dominant: boolean;
+  secondDominant: boolean;
+  subdominant: boolean;
+  secondSubDominant: boolean;
 };
 
 /**
@@ -57,14 +55,8 @@ export function getChordFunctionOnKey(
   return maybe.ok(
     Object.fromEntries(
       Object.entries(harmonicsResult.data).map(([key, harmony]) => {
-        return [
-          key,
-          // prettier-ignore
-          normalized.chordName === harmony.chordName ? "perfect"
-          : normalized.rootName === harmony.root ? "sameRoot"
-          : false,
-        ];
+        return [key, normalized.rootName === harmony.root];
       }, {}),
-    ) as Record<keyof typeof harmonicsResult.data, MatchLevel>,
+    ) as Record<keyof typeof harmonicsResult.data, boolean>,
   );
 }

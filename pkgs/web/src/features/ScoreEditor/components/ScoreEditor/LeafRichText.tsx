@@ -29,11 +29,7 @@ type Props = {
   onRequestRelativelizeAllNotes: () => void;
 };
 
-export const LeafRichText = memo(function LeafRichText(props: Props) {
-  return <NoteLeaf {...props} />;
-});
-
-const NoteLeaf = memo(function NoteLeaf({
+export const LeafRichText = memo(function NoteLeaf({
   fragment,
   className,
   onReplaceNote,
@@ -138,7 +134,9 @@ const NoteLeaf = memo(function NoteLeaf({
     ).data;
     if (!functions) return [];
 
-    return Object.entries(functions).filter(([k, v]) => v != false) as Array;
+    return Object.entries(functions).filter(([k, v]) => v != false) as Array<
+      [keyof typeof functions, boolean]
+    >;
   }, [chord]);
 
   return (
@@ -206,13 +204,9 @@ const NoteLeaf = memo(function NoteLeaf({
           {noteFunctions.length === 0 ? (
             <span className="block opacity-40">N/A</span>
           ) : (
-            noteFunctions.map(([harmFunc, matchness]) =>
-              matchness === "perfect" ? (
+            noteFunctions.map(([harmFunc, isMatched]) =>
+              isMatched ? (
                 <span key={harmFunc} className="block font-bold">
-                  🔑{t(`noteFunctions.${harmFunc}_abbre`)}
-                </span>
-              ) : matchness === "sameRoot" ? (
-                <span key={harmFunc} className="block">
                   🔑{t(`noteFunctions.${harmFunc}_abbre`)}
                 </span>
               ) : null,

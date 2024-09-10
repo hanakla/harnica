@@ -70,7 +70,7 @@ export function getTDSChordsByKeyName(
 
   const buildSet = (chord: NoteFragment.ChordData): ChordSuggest => ({
     root: opt.degree
-      ? getDegreeNameFromKeyValue(chord.keyValues[0])
+      ? getDegreeNameFromKeyValue(chord.keyValues[0], undefined, { key })
       : getKeyNameByKeyValue(chord.keyValues[0]),
     chordName: getChordDetailFromKeyValues(
       chord.keyValues,
