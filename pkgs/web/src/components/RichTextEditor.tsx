@@ -154,6 +154,25 @@ export const RichTextEditor = memo(
     const handleKeyDown = useEvent((e: React.KeyboardEvent) => {
       if (e.nativeEvent.isComposing) return;
 
+      if (e.key === "Enter") {
+        e.preventDefault();
+
+        const sel = getSelection()!;
+        const value = (editorRef.current!.innerText ?? "").replace(
+          /* nbsp */ /\u00A0/g,
+          " ",
+        );
+
+        const newValue =
+          value.slice(0, sel.start) + "\n" + value.slice(sel.end);
+
+        onChange(newValue);
+        Promise.resolve().then(() => {
+          setSelectionState({ start: sel.start + 1, end: sel.start + 1 });
+        });
+        return;
+      }
+
       if ((e.metaKey || e.ctrlKey) && !e.shiftKey && e.key === "z") {
         e.preventDefault();
         history.undo();
