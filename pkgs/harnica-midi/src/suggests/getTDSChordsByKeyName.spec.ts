@@ -26,8 +26,6 @@ describe(getTDSChordsByKeyName.name, () => {
   )("$func in key=$k", ({ k, func, chord, keys }) => {
     const result = getTDSChordsByKeyName(k).data!;
 
-    console.log(result);
-
     expect(result[func]).toMatchObject({
       chordName: chord,
       keyValues: keys,
