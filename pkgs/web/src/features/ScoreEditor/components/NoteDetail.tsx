@@ -591,13 +591,7 @@ export function NoteDetail({
                       onClickListen={onClickChordSuggest}
                       onClickReplace={handleClickChordSuggest}
                       onClickInsertNoteAfter={handleClickInsertAfter}
-                      highlight={
-                        noteFunctions[_key] === "perfect"
-                          ? "green"
-                          : noteFunctions[_key] === "sameRoot"
-                            ? "yellow"
-                            : false
-                      }
+                      highlight={noteFunctions[_key] ? "green" : false}
                     />
                   </TipItemLI>
                 );
