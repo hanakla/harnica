@@ -15,6 +15,7 @@ export function getModifiedChord(
   mod: ManipulationOps,
 ): NoteFragment.ChordNote | null {
   const note = parseStringAsSingleChordNote(chordStr);
+
   if (note?.type !== "chord") return null;
 
   let { chord } = note;

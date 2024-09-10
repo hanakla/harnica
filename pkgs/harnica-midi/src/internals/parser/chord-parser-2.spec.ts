@@ -3,8 +3,6 @@ import {
   parseChordProgression,
   parseStringAsSingleChordNote,
 } from "./chord-parser-2";
-import { NoteFragment, NoteFragmentType } from "./types";
-import dedent from "dedent";
 
 describe("chord-parser-2", () => {
   describe(parseChordProgression.name, () => {

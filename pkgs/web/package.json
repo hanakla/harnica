@@ -67,7 +67,7 @@
     "@types/web": "^0.0.142",
     "@types/wicg-file-system-access": "^2023.10.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
-    "typescript": "^5.3.3"
+    "typescript": "^5.6.2"
   },
   "resolutions": {
     "@types/react": "18.2.56",

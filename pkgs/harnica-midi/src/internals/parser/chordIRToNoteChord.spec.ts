@@ -38,7 +38,7 @@ describe("chordIRToNoteChord", () => {
     });
   });
 
-  it.only.each(
+  it.each(
     // prettier-ignore
     [
       ['BM-5', { root: 11, qualities: [['quality', 'M'], ['tune', 'b', '5']] as NoteQuality[] }, [11, 15, 17]],

@@ -14,7 +14,7 @@ describe("getChordFunctionOnKey", () => {
     thirdTonic: false,
   } as const;
 
-  it.only.each(
+  it.each(
     // prettier-ignore
     [
       { chord: "I", key: "C", actual: { ...allFalse, tonic: true, } },

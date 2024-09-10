@@ -13,11 +13,6 @@ import { useTone } from "../hooks/tone";
 import { useEditorStore } from "../hooks/useEditorStore";
 import { OnMoveCursorToNote } from "./ScoreEditor/types";
 
-type ProgressionNoteProps = {
-  notes: NoteFragmentType[];
-  onMoveCursorToNote: OnMoveCursorToNote;
-};
-
 const PIANO_KEYS = [
   "C",
   "C#",
@@ -104,8 +99,8 @@ const PianoRoll: React.FC = ({ notes, onMoveCursorToNote }) => {
     const endKey = 1000;
 
     const noteComponents: ReactNode[] = [];
-    const noteXPositions: Record = {};
-    const noteYPositions: Record = {};
+    const noteXPositions: Record<number, number> = {};
+    const noteYPositions: Record<number, number> = {};
 
     notes.map((note) => {
       if (note.type !== "chord") return null;
@@ -115,7 +110,6 @@ const PianoRoll: React.FC = ({ notes, onMoveCursorToNote }) => {
 
       noteXPositions[note.noteIndex] = x;
 
-      console.log(note.chord.keyValues);
       const keyValues = [
         ...new Set([
           ...note.chord.keyValues.map(
@@ -139,12 +133,12 @@ const PianoRoll: React.FC = ({ notes, onMoveCursorToNote }) => {
         if (keyValue >= startKey && keyValue < endKey) {
           noteComponents.push(
             <g
+              key={`${note.noteIndex}-${idx}`}
               className={twx(type === "ghost" && "opacity-50")}
               data-note-index={note.noteIndex}
               onClick={handleClickNoteKey}
             >
               <rect
-                key={`${note.noteIndex}-${idx}`}
                 x={x}
                 y={y}
                 width={beats * BEAT_WIDTH}
@@ -198,7 +192,7 @@ const PianoRoll: React.FC = ({ notes, onMoveCursorToNote }) => {
 
       if (key.includes("#")) {
         keys.push(
-          <g>
+          <g key={`${key}${octave}`}>
             <rect
               key={`${key}${octave}`}
               x={0}
@@ -220,9 +214,8 @@ const PianoRoll: React.FC = ({ notes, onMoveCursorToNote }) => {
         );
       } else {
         keys.push(
-          <g>
+          <g key={`${key}${octave}`}>
             <rect
-              key={`${key}${octave}`}
               x={0}
               y={y}
               width={BEAT_WIDTH}

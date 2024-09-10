@@ -26,7 +26,6 @@ type EditorSelection = { start: number; end: number };
 
 export namespace RichTextEditor {
   export type Handler = {
-    setCarretPosition: (pos: number) => void;
     updateValue: (value: string, selection?: EditorSelection) => void;
     getSelection: () => EditorSelection | null;
     setSelection: (selection: EditorSelection) => void;
@@ -64,19 +63,6 @@ export const RichTextEditor = memo(
     useImperativeHandle(
       ref,
       () => ({
-        setCarretPosition: (
-          pos: number,
-          { focus }: { focus?: boolean } = {},
-        ) => {
-          setSelectionState({ start: pos, end: pos });
-          onCaretPositionChange?.(pos);
-
-          if (focus) {
-            setTimeout(() => {
-              editorRef.current?.focus();
-            });
-          }
-        },
         updateValue: (value: string, selection?: EditorSelection) => {
           if (selection) {
             setSelectionState(selection);
@@ -167,6 +153,25 @@ export const RichTextEditor = memo(
 
     const handleKeyDown = useEvent((e: React.KeyboardEvent) => {
       if (e.nativeEvent.isComposing) return;
+
+      if (e.key === "Enter") {
+        e.preventDefault();
+
+        const sel = getSelection()!;
+        const value = (editorRef.current!.innerText ?? "").replace(
+          /* nbsp */ /\u00A0/g,
+          " ",
+        );
+
+        const newValue =
+          value.slice(0, sel.start) + "\n" + value.slice(sel.end);
+
+        onChange(newValue);
+        Promise.resolve().then(() => {
+          setSelectionState({ start: sel.start + 1, end: sel.start + 1 });
+        });
+        return;
+      }
 
       if ((e.metaKey || e.ctrlKey) && !e.shiftKey && e.key === "z") {
         e.preventDefault();

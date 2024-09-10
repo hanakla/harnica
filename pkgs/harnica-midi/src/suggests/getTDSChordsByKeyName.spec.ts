@@ -4,39 +4,31 @@ import {
 } from "./getTDSChordsByKeyName";
 
 describe(getTDSChordsByKeyName.name, () => {
-  it.only.each(
+  it.each(
     // prettier-ignore
     [
-      { func: "tonic", chord: "C", keys: [0, 4, 7] },
-      { func: "secondTonic", chord: "Em", keys: [4, 7, 11] },
-      { func: "thirdTonic", chord: "Am", keys: [9, 12, 16] },
-      { func: "dominant", chord: "G", keys: [7, 11, 14] },
-      { func: "secondDominant", chord: "Bm-5", keys: [11, 15, 17] },
-      { func: "subdominant", chord: "F", keys: [5, 9, 12] },
-      { func: "secondSubDominant", chord: "Dm", keys: [2, 5, 9] },
-    ] satisfies Array<{ func: keyof FunctionChordResults; chord: string; keys: number[] }>,
-  )("$func in key=C", ({ func, chord, keys }) => {
-    const result = getTDSChordsByKeyName("C").data!;
+      { k: 'C', func: "tonic", chord: "C", keys: [0, 4, 7] },
+      { k: 'C', func: "secondTonic", chord: "Em", keys: [4, 7, 11] },
+      { k: 'C', func: "thirdTonic", chord: "Am", keys: [9, 12, 16] },
+      { k: 'C', func: "dominant", chord: "G", keys: [7, 11, 14] },
+      { k: 'C', func: "secondDominant", chord: "Bm-5", keys: [11, 15, 17] },
+      { k: 'C', func: "subdominant", chord: "F", keys: [5, 9, 12] },
+      { k: 'C', func: "secondSubDominant", chord: "Dm", keys: [2, 5, 9] },
+
+      { k: 'D', func: "tonic", chord: "D", keys: [2, 6, 9] },
+      { k: 'D', func: "secondTonic", chord: "F#m", keys: [6, 9, 13] },
+      { k: 'D', func: "thirdTonic", chord: "Bm", keys: [11, 14, 18] },
+      { k: 'D', func: "dominant", chord: 'A', keys: [9, 13, 16] },
+      { k: 'D', func: "secondDominant", chord: 'C#m-5', keys: [13, 17, 19] },
+      { k: 'D', func: "subdominant", chord: 'G', keys: [7, 11, 14] },
+      { k: 'D', func: "secondSubDominant", chord: 'Em', keys: [4, 7, 11] },
+    ] satisfies Array<{ k: string, func: keyof FunctionChordResults; chord: string; keys: number[] }>,
+  )("$func in key=$k", ({ k, func, chord, keys }) => {
+    const result = getTDSChordsByKeyName(k).data!;
 
     expect(result[func]).toMatchObject({
       chordName: chord,
       keyValues: keys,
     });
   });
-
-  // it.each([
-  //   ["tonic", "E", [4, 8, 11]],
-  //   ["dominant", "B", [11, 15, 18]],
-  //   ["subdominant", "A", [9, 13, 16]],
-  //   ["secondSubdominant", "F#m", [6, 9, 13]],
-  //   ["thirdTonic", "G#m", [8, 11, 15]],
-  //   ["sixthTonic", "C#m", [1, 4, 8]],
-  //   ["seventhDominant", "D#dim", [3, 6, 9]],
-  // ])("%s in E", (prop, chordName, keys) => {
-  //   const result = getTDSChordsByKeyName("E")!;
-  //   expect(result[prop]).toMatchObject({
-  //     chordName,
-  //     keyValues: keys,
-  //   });
-  // });
 });
