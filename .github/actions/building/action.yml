@@ -4,9 +4,9 @@ description: Build all packages
 runs:
   using: composite
   steps:
-    - name: Build (harnica-midi)
+    - name: Build (harnica-lib)
       shell: bash
-      working-directory: ./pkgs/harnica-midi
+      working-directory: ./pkgs/harnica-lib
       run: |
         pwd
         yarn build

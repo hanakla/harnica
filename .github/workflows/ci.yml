@@ -39,10 +39,10 @@ jobs:
 
       - uses: ./.github/actions/building
 
-      - name: Testing harnica-midi
+      - name: Testing harnica-lib
         continue-on-error: true
         run: |
-          cd pkgs/harnica-midi
+          cd pkgs/harnica-lib
           yarn test
 
   bundle-size:
