@@ -160,37 +160,22 @@ export const LeafRichText = memo(function NoteLeaf({
       onContextMenu={contextMenu.handleContextEvent}
     >
       <span
-        css={css`
-          line-height: 1;
-        `}
+        className={twx(
+          "leading-none relative",
+          chord.detail.warns.length > 0 &&
+            "before:content-[''] before:absolute before:left-0 before:bottom-0 " +
+              "before:block before:w-full before:border-b-4 before:border-[rgba(254,199,35,0.5)]",
+        )}
         onClick={onClick}
       >
         {fragment.match.string}
       </span>
 
-      {chord?.detail.warns.length > 0 && (
-        <span
-          css={css`
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            border-bottom: 4px solid rgba(254, 199, 35, 0.5);
-          `}
-        />
-      )}
-
       <Portal containerQuery="#noteEditor">
         <div
           ref={alsoFloat.refs.setFloating}
-          css={css`
-            color: initial;
-            font-size: 10px;
-            line-height: 1;
-            pointer-events: none;
-          `}
           style={alsoFloat.floatingStyles}
+          className="text-[initial] text-[10px] leading-none pointer-events-none"
           contentEditable={false}
           onMouseEnter={(e) => {
             e.preventDefault();
