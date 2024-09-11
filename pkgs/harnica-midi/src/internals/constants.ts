@@ -2,6 +2,7 @@ import { KeyString } from "./types";
 
 export const DEFAULT_KEY = "C" as KeyString;
 export const DEFAULT_OCTAVE = 3;
+export const DEFAULT_BEATS = 4;
 
 export const DEGREE_TO_KEYVALUE_MAP: Record<string, number> = {
   Ib: -1, // is VII

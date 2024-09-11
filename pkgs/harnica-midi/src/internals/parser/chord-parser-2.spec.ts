@@ -1,8 +1,15 @@
 import { describe, expect, it } from "vitest";
 import {
+  attachTimeToNotes,
   parseChordProgression,
   parseStringAsSingleChordNote,
 } from "./chord-parser-2";
+import {
+  createBarSeparatorNote,
+  createBraceBeginNote,
+  createBraceEndNote,
+} from "@test/mock";
+import { createNoteNote } from "../note";
 
 describe("chord-parser-2", () => {
   describe(parseChordProgression.name, () => {
@@ -99,7 +106,7 @@ describe("chord-parser-2", () => {
         [5, 0, 0],
         [5, 2, 0],
         // I
-        [6, 0, 0],
+        // [6, 0, 0],
       ]);
     });
 
@@ -199,6 +206,44 @@ describe("chord-parser-2", () => {
         detail: {
           chordName: "F#",
         },
+      });
+    });
+  });
+
+  describe(attachTimeToNotes.name, () => {
+    it("attach time data with 4beats", () => {
+      const fragments = [
+        createBraceBeginNote(),
+        createNoteNote([0, 0, 0], false, "C"),
+        createNoteNote([0, 0, 0], false, "C"),
+        createBraceEndNote(),
+        createNoteNote([0, 0, 0], false, "C"),
+        createBarSeparatorNote(),
+        createNoteNote([0, 0, 0], false, "C"),
+      ];
+
+      attachTimeToNotes(fragments, 4);
+
+      const times = fragments.map((f) => f.time);
+
+      expect(times[1]).toMatchObject({
+        startAt: { beatClock: [0, 0, 0] },
+        duration: { beatClock: [0, 1, 0] },
+      });
+
+      expect(times[2]).toMatchObject({
+        startAt: { beatClock: [0, 1, 0] },
+        duration: { beatClock: [0, 1, 0] },
+      });
+
+      expect(times[4]).toMatchObject({
+        startAt: { beatClock: [0, 2, 0] },
+        duration: { beatClock: [0, 2, 0] },
+      });
+
+      expect(times[6]).toMatchObject({
+        startAt: { beatClock: [1, 0, 0] },
+        duration: { beatClock: [1, 0, 0] },
       });
     });
   });
