@@ -1,13 +1,14 @@
 import { default as MidiWriter } from "midi-writer-js";
 import { parseChordProgression } from "@/internals/parser/chord-parser-2";
+import { DEFAULT_BEATS } from "@/internals/constants";
 
 export function progressionToMidi(
   prog: string,
   defaultKey: string,
-  beats: number = 4,
+  beats: number = DEFAULT_BEATS,
 ) {
   const track = new MidiWriter.Track();
-  const chordProgression = parseChordProgression(prog, defaultKey, 4);
+  const chordProgression = parseChordProgression(prog, defaultKey, beats);
   chordProgression.forEach((note) => {
     if (note.type === "bpmChange") {
       const midiNote2 = new MidiWriter.TempoEvent({

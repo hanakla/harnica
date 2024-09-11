@@ -1,4 +1,4 @@
-import { DEFAULT_OCTAVE } from "../constants";
+import { DEFAULT_BEATS, DEFAULT_OCTAVE } from "../constants";
 import { BeatClock, KeyString, assertKeyString } from "../types";
 import { NoteFragment, NoteFragmentType, NoteMatch } from "./types";
 import { KEY_CHNAGE_REGEX, parseKeyChange } from "./parseKeyChange";
@@ -24,7 +24,7 @@ const COMMENT_REGEX = /^[#].*?[#]$/;
 export function parseChordProgression(
   progression: string,
   key: string = "C",
-  sigBeats: number = 4,
+  sigBeats: number = DEFAULT_BEATS,
   baseOctave: number = DEFAULT_OCTAVE,
 ) {
   let ateStrCount: number = 0;
@@ -231,6 +231,39 @@ export function parseChordProgression(
     progression = progression.slice(match?.[0].length ?? 1);
   }
 
+  attachTimeToNotes(fragments, sigBeats);
+
+  return fragments;
+
+  function createError(
+    message: string,
+    index: number,
+    match: RegExpExecArray,
+    ate: number,
+  ) {
+    return {
+      type: "error",
+      fragIndex: index,
+      isSoundable: false,
+      error: new Error(message),
+      match: createMatch(match, ate),
+    } as NoteFragment.ErroredNote;
+  }
+
+  function createMatch(match: RegExpExecArray, ate: number): NoteMatch {
+    return {
+      start: ate + match.index,
+      end: ate + match.index + match[0].length,
+      length: match[0].length,
+      string: match[0],
+    };
+  }
+}
+
+export function attachTimeToNotes(
+  fragments: NoteFragmentType[],
+  sigBeats: number,
+) {
   let currentTime: BeatClock = [0, 0, 0];
   let currentBarNotes: Array<
     NoteFragment.TimedNote | NoteFragment.TimedNote[]
@@ -283,6 +316,11 @@ export function parseChordProgression(
           };
 
           currentTime = addBeatClock(currentTime, perNoteDurInGroup, sigBeats);
+          barRemainingBeats = subtractBeatClock(
+            barRemainingBeats,
+            perNoteDurInGroup,
+            sigBeats,
+          );
         });
       } else {
         note.time = {
@@ -356,32 +394,6 @@ export function parseChordProgression(
   }
 
   setTimesToCurrentBarNotes();
-
-  return fragments;
-
-  function createError(
-    message: string,
-    index: number,
-    match: RegExpExecArray,
-    ate: number,
-  ) {
-    return {
-      type: "error",
-      fragIndex: index,
-      isSoundable: false,
-      error: new Error(message),
-      match: createMatch(match, ate),
-    } as NoteFragment.ErroredNote;
-  }
-
-  function createMatch(match: RegExpExecArray, ate: number): NoteMatch {
-    return {
-      start: ate + match.index,
-      end: ate + match.index + match[0].length,
-      length: match[0].length,
-      string: match[0],
-    };
-  }
 
   function getPerNoteInBarBeatClockDuration(
     numChordsInBars: number,
