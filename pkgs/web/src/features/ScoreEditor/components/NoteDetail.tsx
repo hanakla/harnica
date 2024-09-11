@@ -11,7 +11,7 @@ import {
   analysis,
   suggests,
   parseStringAsSingleChordNote,
-} from "@hanakla/harnica-midi";
+} from "@hanakla/harnica-lib";
 import { MouseEvent, ReactNode, UIEvent, memo, useMemo } from "react";
 import {
   RiAddFill,

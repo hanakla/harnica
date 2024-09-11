@@ -3,7 +3,7 @@ import {
   type NoteFragmentType,
   normalizeKeyValue,
   getDegreeNameFromKeyValue,
-} from "@hanakla/harnica-midi";
+} from "@hanakla/harnica-lib";
 import React, { useState, useMemo, ReactNode, useEffect } from "react";
 import { useEffectOnce, useMeasure } from "react-use";
 import useEvent from "react-use-event-hook";

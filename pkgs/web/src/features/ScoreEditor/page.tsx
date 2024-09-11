@@ -8,7 +8,7 @@ import {
   type NoteFragmentType,
   getDegreeDetailByChordName,
   beatclock,
-} from "@hanakla/harnica-midi";
+} from "@hanakla/harnica-lib";
 import { klona } from "klona";
 import {
   compressToEncodedURIComponent,
@@ -245,10 +245,10 @@ export function ScoreEditor() {
     const nextProg = parseChordProgression(converted);
     const nextNote =
       positionData?.noteIdx != null
-        ? nextProg.find(
+        ? (nextProg.find(
             (n): n is NoteFragment.ChordNote =>
               n.noteIndex === positionData?.noteIdx,
-          ) ?? null
+          ) ?? null)
         : null;
 
     editorRef.current?.updateValue(converted);

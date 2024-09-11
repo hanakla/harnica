@@ -5,7 +5,7 @@ import {
   NoteFragment,
   NoteFragmentType,
   getDegreeDetailByChordName,
-} from "@hanakla/harnica-midi";
+} from "@hanakla/harnica-lib";
 import { MouseEvent, memo, useEffect, useId, useMemo } from "react";
 import useEvent from "react-use-event-hook";
 import {

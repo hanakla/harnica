@@ -1,4 +1,4 @@
-import { type NoteFragmentType } from "@hanakla/harnica-midi";
+import { type NoteFragmentType } from "@hanakla/harnica-lib";
 import { StoreApi, create } from "zustand";
 import { persist } from "zustand/middleware";
 

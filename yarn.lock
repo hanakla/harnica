@@ -1967,9 +1967,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hanakla/harnica-midi@workspace:pkgs/harnica-midi":
+"@hanakla/harnica-lib@workspace:pkgs/harnica-lib":
   version: 0.0.0-use.local
-  resolution: "@hanakla/harnica-midi@workspace:pkgs/harnica-midi"
+  resolution: "@hanakla/harnica-lib@workspace:pkgs/harnica-lib"
   dependencies:
     dedent: "npm:^1.5.3"
     midi-writer-js: "npm:^3.1.1"
