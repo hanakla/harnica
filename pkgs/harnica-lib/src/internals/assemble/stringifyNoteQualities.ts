@@ -41,8 +41,8 @@ export function stringifyNoteQualities([...qualities]: NoteQuality[]) {
 
   return (
     (shouldOutMajMin ? majminQualities.join("") : "") +
-    formattedTunes +
     formatedTensions +
+    formattedTunes +
     format(otherQualities) +
     format(susQualities)
   );

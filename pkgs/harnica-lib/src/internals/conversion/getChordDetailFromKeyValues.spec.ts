@@ -18,6 +18,7 @@ describe("getChordDetailFromKeyValues", () => {
     ["G7", "G7"],
     ["B-5", "B-5"],
     ["Bm-5", "Bdim"],
+    ["Bm7-5", "Bm7-5"],
     ["BM-5", "B-5"],
     ["Bm+5", "Bm+5"],
   ])("work for %s?", (source, expectStr) => {
